@@ -1,7 +1,7 @@
 # Klondike
 Finally a command line version, such an upgrade...
 
-![diagram](diagram.svg)
+![diagram](diagram.png)
 
 ## Classes
 
