@@ -34,7 +34,7 @@ Stack.class: Stack.java Node.class
 CardStack.class: CardStack.java Stack.class Card.class IRenderable.class
 	javac -g CardStack.java
 
-Klondike.class: Klondike.java IRenderable.class CommandParser.class PrintUtils.class
+Klondike.class: Klondike.java IRenderable.class CommandParser.class  MoveCommand.class PlayCommand.class StackCommand.class PrintUtils.class
 	javac -g Klondike.java
 
 run: Klondike.class

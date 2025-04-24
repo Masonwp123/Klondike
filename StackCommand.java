@@ -7,10 +7,10 @@ public class StackCommand {
 
         // Parse based on length
         switch (splitString.length) {
-            case 1 -> { //'Stack'
+            case 1: { //'Stack'
                 return new StackCommand();
             }
-            case 3 -> { //'Stack at [Column Name]'
+            case 3: { //'Stack at [Column Name]'
                 return StackAtCommand.parse(string);
             }
         }

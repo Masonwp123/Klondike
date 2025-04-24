@@ -7,10 +7,10 @@ public class PlayCommand {
 
         // Parse based on length, format for length of 3 is assumed to be played at
         switch (splitString.length) {
-            case 1 -> { //'Play'
+            case 1: { //'Play'
                 return new PlayCommand();
             }
-            case 3 -> { //'Play at [Column Name]'
+            case 3: { //'Play at [Column Name]'
                 return PlayAtCommand.parse(string);
             }
         }

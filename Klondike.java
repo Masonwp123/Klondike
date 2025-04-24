@@ -68,17 +68,24 @@ public class Klondike implements IRenderable, Runnable {
             Object command = commandParser.getCommand();
 
             // Null commands indicate an error inside a command, default indicates a different object
-            switch (command) {
-                case CommandParser.HelpCommand helpCommand -> help(helpCommand);
-                case CommandParser.NewGameCommand newGameCommand -> newGame();
-                case CommandParser.QuitGameCommand quitGameCommand -> keepGoing = false;
-                case CommandParser.NextCommand nextCommand -> next();
-                case PlayCommand.PlayAtCommand playAtCommand -> playAt(playAtCommand);
-                case PlayCommand playCommand -> play(playCommand);
-                case MoveCommand moveCommand -> move(moveCommand);
-                case StackCommand.StackAtCommand stackCommand -> stackAt(stackCommand);
-                case StackCommand stackCommand -> stack(stackCommand);
-                case null, default -> {}
+            if (command instanceof CommandParser.HelpCommand) {
+                help((CommandParser.HelpCommand)command);
+            } else if (command instanceof CommandParser.NewGameCommand) {
+                newGame();
+            } else if (command instanceof CommandParser.QuitGameCommand) {
+                keepGoing = false;
+            } else if (command instanceof CommandParser.NextCommand) {
+                next();
+            } else if (command instanceof PlayCommand.PlayAtCommand) {
+                playAt((PlayCommand.PlayAtCommand)command);
+            } else if (command instanceof PlayCommand) {
+                play((PlayCommand)command);
+            } else if (command instanceof MoveCommand) {
+                move((MoveCommand)command);
+            } else if (command instanceof StackCommand.StackAtCommand) {
+                stackAt((StackCommand.StackAtCommand)command);
+            } else if (command instanceof StackCommand) {
+                stack((StackCommand)command);
             }
 
             // Test if the head of each ace stack is a king, if they are, the game has finished
