@@ -1,6 +1,8 @@
 # Klondike
 Finally a command line version, such an upgrade...
 
+![diagram](diagram.svg)
+
 ## Classes
 
 ### interface IRenderable
