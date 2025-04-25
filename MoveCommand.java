@@ -35,7 +35,10 @@ public class MoveCommand {
             PrintUtils.printError("Column Number was not valid");
             return null;
         }
-
+        if (moveCommand.columnName < 0 || moveCommand.columnName >= Klondike.boardLength) {
+            PrintUtils.printError("Column Number needs to be between 0 and 7");
+            return null;
+        }
         return moveCommand;
     }
 

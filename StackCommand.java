@@ -40,6 +40,10 @@ public class StackCommand {
                 PrintUtils.printError("Column Number was not valid");
                 return null;
             }
+            if (stackAtCommand.columnName < 0 || stackAtCommand.columnName >= Klondike.boardLength) {
+                PrintUtils.printError("Column Number needs to be between 0 and 7");
+                return null;
+            }
             return stackAtCommand;
         }
 
